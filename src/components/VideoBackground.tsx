@@ -1,78 +1,55 @@
-import { useRef, useEffect, useState, useCallback } from "react";
-import heroImg from "@/assets/hero-clinic.jpg";
-import botoxImg from "@/assets/treatment-botox.jpg";
-import fillersImg from "@/assets/treatment-fillers.jpg";
-import laserImg from "@/assets/treatment-laser.jpg";
-
-const sectionImages = [heroImg, botoxImg, fillersImg, laserImg, heroImg];
+import { useRef, useEffect, useCallback } from "react";
 
 const VideoBackground = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [scrollProgress, setScrollProgress] = useState(0);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const rafRef = useRef<number | null>(null);
 
   const handleScroll = useCallback(() => {
-    const scrollTop = window.scrollY;
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const progress = Math.min(scrollTop / Math.max(docHeight, 1), 1);
-    setScrollProgress(progress);
+    if (rafRef.current) cancelAnimationFrame(rafRef.current);
 
-    const sectionCount = sectionImages.length;
-    const index = Math.min(
-      Math.floor(progress * sectionCount),
-      sectionCount - 1
-    );
-    setActiveIndex(index);
+    rafRef.current = requestAnimationFrame(() => {
+      const video = videoRef.current;
+      if (!video || !video.duration || isNaN(video.duration)) return;
+
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = Math.min(scrollTop / Math.max(docHeight, 1), 1);
+
+      video.currentTime = progress * video.duration;
+    });
   }, []);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    handleScroll();
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    };
   }, [handleScroll]);
 
   return (
     <div className="fixed inset-0 -z-10 overflow-hidden">
-      {/* Image layers with crossfade */}
-      {sectionImages.map((img, i) => (
-        <div
-          key={i}
-          className="absolute inset-0 transition-opacity duration-1000 ease-in-out"
-          style={{ opacity: activeIndex === i ? 1 : 0 }}
-        >
-          <img
-            src={img}
-            alt=""
-            className="w-full h-full object-cover"
-            style={{
-              transform: `scale(${1 + scrollProgress * 0.08})`,
-              transition: "transform 0.3s ease-out",
-            }}
-          />
-        </div>
-      ))}
+      <video
+        ref={videoRef}
+        muted
+        playsInline
+        preload="auto"
+        className="w-full h-full object-cover"
+      >
+        <source src="/clinic-tour.mp4" type="video/mp4" />
+      </video>
 
       {/* Warm overlay for readability */}
       <div
         className="absolute inset-0"
         style={{
           background: `linear-gradient(180deg, 
-            hsl(30 30% 97% / ${0.55 + scrollProgress * 0.25}) 0%, 
-            hsl(30 30% 97% / ${0.7 + scrollProgress * 0.2}) 50%,
-            hsl(30 30% 97% / ${0.8 + scrollProgress * 0.15}) 100%)`,
+            hsl(30 30% 97% / 0.45) 0%, 
+            hsl(30 30% 97% / 0.55) 50%,
+            hsl(30 30% 97% / 0.65) 100%)`,
         }}
       />
-
-      {/* Video element - ready for real clinic tour video */}
-      {/* Uncomment and add your video URL to enable scroll-driven video:
-      <video
-        ref={videoRef}
-        muted
-        playsInline
-        preload="auto"
-        className="absolute inset-0 w-full h-full object-cover"
-      >
-        <source src="/clinic-tour.mp4" type="video/mp4" />
-      </video>
-      */}
     </div>
   );
 };
