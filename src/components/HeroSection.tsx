@@ -18,14 +18,14 @@ const HeroSection = () => {
           </p>
 
           <h1 className="section-heading text-foreground leading-[1.1] mb-6">
-            Advanced beauty, aesthetics and{" "}
-            <span className="italic text-primary">personalised</span> care
+            Transforming beauty and boosting{" "}
+            <span className="italic text-primary">confidence!</span>
           </h1>
 
           <div className="luxury-divider" />
 
           <p className="section-subheading mt-6 mb-10">
-            Facial and body treatments focused on natural results, safety and well-being.
+            Advanced Brazilian aesthetics with exceptional results, personalised care and total client satisfaction.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -36,7 +36,7 @@ const HeroSection = () => {
               Book Now
             </button>
             <a
-              href="https://wa.me/44XXXXXXXXXX"
+              href="https://wa.me/447492934010"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-whatsapp"

@@ -5,6 +5,7 @@ const navLinks = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
   { label: "Treatments", href: "#treatments" },
+  { label: "Prices", href: "#prices" },
   { label: "Testimonials", href: "#testimonials" },
   { label: "Contact", href: "#contact" },
 ];
@@ -43,7 +44,7 @@ const Navigation = () => {
             Tatiana Torres
           </span>
           <span className="text-[10px] tracking-[0.35em] uppercase text-muted-foreground font-body">
-            Beauty & Aesthetics
+            Brazilian Aesthetic & Beauty
           </span>
         </button>
 

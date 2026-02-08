@@ -18,7 +18,7 @@ const BookingSection = () => (
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
-            href="https://wa.me/44XXXXXXXXXX"
+            href="https://wa.me/447492934010"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-whatsapp"

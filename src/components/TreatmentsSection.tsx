@@ -5,22 +5,22 @@ import laserImg from "@/assets/treatment-laser.jpg";
 
 const treatments = [
   {
-    name: "Botox",
+    name: "Facial Aesthetics & Injectables",
     image: botoxImg,
-    description: "Smooth fine lines and wrinkles for a refreshed, youthful appearance.",
-    benefits: ["Reduces wrinkles", "Prevents new lines", "Quick & minimal downtime"],
+    description: "Anti-wrinkle injections, Profhilo, mesotherapy, lip fillers and skin boosters for a refreshed, youthful appearance.",
+    benefits: ["Anti-wrinkle injections", "Dermal fillers", "Profhilo & Lumi"],
   },
   {
-    name: "Dermal Fillers",
-    image: fillersImg,
-    description: "Restore volume, enhance contours and achieve beautifully balanced features.",
-    benefits: ["Restores volume", "Enhances contours", "Natural-looking results"],
-  },
-  {
-    name: "Laser Treatments",
+    name: "Skin Treatments",
     image: laserImg,
-    description: "Advanced laser technology for skin rejuvenation, pigmentation and more.",
-    benefits: ["Skin rejuvenation", "Even skin tone", "Collagen stimulation"],
+    description: "Chemical peels, microneedling and deep cleansing facials for radiant, clear and rejuvenated skin.",
+    benefits: ["Chemical peels", "Microneedling", "Deep cleansing facials"],
+  },
+  {
+    name: "Micropigmentation & PMU",
+    image: fillersImg,
+    description: "Expert microblading, lip blush, eyeliner and brow techniques for beautifully defined, long-lasting results.",
+    benefits: ["Microblading", "Lip blush", "Eyeliner PMU"],
   },
 ];
 
