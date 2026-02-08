@@ -28,8 +28,8 @@ const ContactSection = () => (
                 <h3 className="font-heading text-lg font-medium text-foreground mb-1">
                   Address
                 </h3>
-                <p className="text-sm text-muted-foreground font-body">
-                  Tatiana Torres Beauty<br />
+              <p className="text-sm text-muted-foreground font-body">
+                  382 Bearwood Road, B66 4ET<br />
                   Birmingham, United Kingdom
                 </p>
               </div>
@@ -59,9 +59,12 @@ const ContactSection = () => (
                 <h3 className="font-heading text-lg font-medium text-foreground mb-1">
                   Get in Touch
                 </h3>
+                <p className="text-sm text-muted-foreground font-body mb-2">
+                  📞 07492 934010
+                </p>
                 <div className="flex gap-4 mt-2">
                   <a
-                    href="https://wa.me/44XXXXXXXXXX"
+                    href="https://wa.me/447492934010"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-sm text-primary hover:text-rose-deep transition-colors font-body"
@@ -74,7 +77,7 @@ const ContactSection = () => (
                     rel="noopener noreferrer"
                     className="text-sm text-primary hover:text-rose-deep transition-colors font-body"
                   >
-                    Instagram
+                    @tatianatorresbeauty
                   </a>
                 </div>
               </div>
@@ -86,8 +89,8 @@ const ContactSection = () => (
         <ScrollReveal delay={0.2}>
           <div className="rounded-2xl overflow-hidden h-80 lg:h-full min-h-[320px] border border-border/50">
             <iframe
-              title="Tatiana Torres Beauty - Birmingham"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d155421.56282590924!2d-2.0269!3d52.4862!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4870942d1b417173%3A0xca81fef0aeee7998!2sBirmingham%2C%20UK!5e0!3m2!1sen!2suk!4v1700000000000"
+              title="Tatiana Torres Brazilian Aesthetic & Beauty - Bearwood, Birmingham"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2430.5!2d-1.9685!3d52.4745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTLCsDI4JzI4LjIiTiAxwrA1OCc2LjYiVw!5e0!3m2!1sen!2suk!4v1700000000000"
               width="100%"
               height="100%"
               style={{ border: 0 }}

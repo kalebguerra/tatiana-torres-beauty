@@ -3,7 +3,7 @@ import { MessageCircle } from "lucide-react";
 
 const FloatingChat = () => (
   <motion.a
-    href="https://wa.me/44XXXXXXXXXX"
+    href="https://wa.me/447492934010"
     target="_blank"
     rel="noopener noreferrer"
     initial={{ scale: 0, opacity: 0 }}

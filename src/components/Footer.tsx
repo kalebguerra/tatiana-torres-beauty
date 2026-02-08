@@ -16,11 +16,12 @@ const Footer = () => {
                 Tatiana Torres
               </span>
               <span className="text-[10px] tracking-[0.35em] uppercase text-muted-foreground font-body">
-                Beauty & Aesthetics
+                Brazilian Aesthetic & Beauty
               </span>
             </button>
             <p className="text-sm text-muted-foreground mt-4 leading-relaxed font-body">
-              Advanced aesthetics and personalised care in Birmingham, United Kingdom.
+              382 Bearwood Road, B66 4ET — Birmingham, UK<br />
+              📞 07492 934010
             </p>
           </div>
 
@@ -79,7 +80,7 @@ const Footer = () => {
 
         <div className="border-t border-border/30 mt-12 pt-8 text-center">
           <p className="text-xs text-muted-foreground font-body">
-            © {new Date().getFullYear()} Tatiana Torres Beauty. All rights reserved.
+            © {new Date().getFullYear()} Tatiana Torres Brazilian Aesthetic & Beauty. All rights reserved.
           </p>
         </div>
       </div>

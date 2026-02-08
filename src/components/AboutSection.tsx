@@ -23,7 +23,7 @@ const AboutSection = () => (
         {/* Text */}
         <ScrollReveal delay={0.2}>
           <p className="text-sm tracking-[0.3em] uppercase text-muted-foreground mb-4 font-body">
-            Meet your practitioner
+            Founder & Aesthetic Practitioner
           </p>
           <h2 className="section-heading text-foreground mb-2">
             About <span className="italic text-primary">Tatiana</span>
@@ -32,34 +32,33 @@ const AboutSection = () => (
 
           <div className="space-y-5 mt-8">
             <p className="text-muted-foreground leading-relaxed font-body">
-              I am Tatiana Torres, an advanced aesthetics professional passionate about
-              enhancing each client's natural beauty. With extensive training in the latest
-              techniques and a commitment to safety, I provide bespoke treatments that
-              deliver subtle, elegant results.
+              With over 25 years of experience in the beauty industry, Tatiana began her journey
+              in Brazil within a family of hairdressers. At 15, she completed her first professional
+              course and managed a salon for nearly a decade.
             </p>
             <p className="text-muted-foreground leading-relaxed font-body">
-              Based in Birmingham, my clinic is a warm and welcoming space where you can
-              feel completely at ease. I believe that every person deserves to feel
-              confident in their own skin, and I'm here to help you achieve that — naturally.
+              She graduated in Industrial Chemistry Technology and Quality Management.
+              In 2016, she moved to England, specialising in design and micropigmentation.
             </p>
             <p className="text-muted-foreground leading-relaxed font-body">
-              From consultation to aftercare, I'm with you every step of the way,
-              ensuring your experience is as exceptional as your results.
+              In 2020, she co-founded the first Brazilian salon in Birmingham and in 2023,
+              opened her own clinic. She holds a Level 7 postgraduate qualification in
+              advanced aesthetics and injectable procedures.
             </p>
           </div>
 
           <div className="flex gap-8 mt-10">
             <div>
-              <span className="font-heading text-3xl text-primary">500+</span>
-              <p className="text-xs text-muted-foreground mt-1 font-body">Happy Clients</p>
-            </div>
-            <div>
-              <span className="font-heading text-3xl text-primary">10+</span>
+              <span className="font-heading text-3xl text-primary">25+</span>
               <p className="text-xs text-muted-foreground mt-1 font-body">Years Experience</p>
             </div>
             <div>
+              <span className="font-heading text-3xl text-primary">Level 7</span>
+              <p className="text-xs text-muted-foreground mt-1 font-body">Qualification</p>
+            </div>
+            <div>
               <span className="font-heading text-3xl text-primary">100%</span>
-              <p className="text-xs text-muted-foreground mt-1 font-body">Satisfaction</p>
+              <p className="text-xs text-muted-foreground mt-1 font-body">Dedication</p>
             </div>
           </div>
         </ScrollReveal>

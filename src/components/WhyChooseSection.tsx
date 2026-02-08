@@ -4,23 +4,23 @@ import { Heart, ShieldCheck, Sparkles, Users } from "lucide-react";
 const reasons = [
   {
     icon: Heart,
-    title: "Personalised Care",
-    description: "Every treatment plan is tailored to your unique features, goals and lifestyle.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Qualified Professional",
-    description: "Certified and continuously trained in the latest advanced aesthetic techniques.",
+    title: "Professionalism",
+    description: "Level 7 qualified practitioner with over 25 years of experience in the beauty industry.",
   },
   {
     icon: Sparkles,
-    title: "Natural Results",
-    description: "Subtle enhancements that celebrate your beauty — never overdone.",
+    title: "Innovation",
+    description: "Brazilian techniques combined with the latest advanced aesthetic procedures and technology.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Care",
+    description: "Every treatment is tailored to your unique features with total dedication to your well-being.",
   },
   {
     icon: Users,
-    title: "Safe & Welcoming",
-    description: "A warm, discreet environment where your comfort and safety come first.",
+    title: "Results",
+    description: "Exceptional outcomes that transform self-esteem and boost confidence — naturally.",
   },
 ];
 
