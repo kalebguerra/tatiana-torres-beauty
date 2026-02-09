@@ -12,7 +12,7 @@ const AboutSection = () => (
               <img
                 src={portraitImg}
                 alt="Tatiana Torres - Advanced Aesthetics Professional"
-                className="w-full h-[500px] lg:h-[600px] object-cover"
+                className="w-full h-[300px] lg:h-[380px] object-contain bg-white"
               />
             </div>
             {/* Decorative accent */}

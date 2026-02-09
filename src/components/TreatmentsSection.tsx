@@ -47,15 +47,15 @@ const TreatmentsSection = () => {
           </div>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {treatments.map((t, i) => (
             <ScrollReveal key={t.name} delay={i * 0.15}>
               <div className="glass-card group cursor-pointer p-0 overflow-hidden">
-                <div className="relative h-64 overflow-hidden">
+                <div className="relative h-56 overflow-hidden bg-white flex items-center justify-center">
                   <img
                     src={t.image}
                     alt={t.name}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="mx-auto h-full w-auto object-contain transition-transform duration-500 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-foreground/10 group-hover:bg-foreground/5 transition-colors duration-500" />
                 </div>

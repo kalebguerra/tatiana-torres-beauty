@@ -34,10 +34,12 @@ const VideoBackground = () => {
         ref={videoRef}
         muted
         playsInline
-        preload="auto"
+        preload="metadata"
         className="w-full h-full object-cover"
+        onError={() => console.log("Erro ao carregar vídeo - arquivo pode ser muito grande ou incompatível")}
       >
         <source src="/clinic-tour.mp4" type="video/mp4" />
+        Seu navegador não suporta tag de vídeo.
       </video>
 
       {/* Warm overlay for readability */}
