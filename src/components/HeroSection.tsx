@@ -9,14 +9,14 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center px-6 pb-32 sm:pb-12">
+    <section id="home" className="relative min-h-screen flex items-center justify-center px-6 pt-28 sm:pt-12 pb-32 sm:pb-12">
       <div className="max-w-4xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3, ease: [0.4, 0, 0.2, 1] }}
         >
-          <div className="flex justify-center mb-6 md:block hidden">
+          <div className="hidden md:flex justify-center mb-6">
             <Suspense fallback={<div className="w-80 h-80" />}>
               <Logo3D size="xl" className="!w-80 !h-80" />
             </Suspense>
