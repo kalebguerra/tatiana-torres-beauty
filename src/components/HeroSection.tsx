@@ -18,7 +18,7 @@ const HeroSection = () => {
         >
           <div className="flex justify-center mb-6">
             <Suspense fallback={<div className="w-40 h-40" />}>
-              <Logo3D size="xl" />
+              <Logo3D size="xl" className="!w-80 !h-80" />
             </Suspense>
           </div>
 
