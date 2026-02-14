@@ -1,20 +1,23 @@
 import { useState, useEffect, lazy, Suspense } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLanguage } from "@/contexts/LanguageContext";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 const Logo3D = lazy(() => import("@/components/Logo3D"));
-
-const navLinks = [
-{ label: "Home", href: "#home" },
-{ label: "About", href: "#about" },
-{ label: "Treatments", href: "#treatments" },
-{ label: "Prices", href: "#prices" },
-{ label: "Testimonials", href: "#testimonials" },
-{ label: "Contact", href: "#contact" }];
-
 
 const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { t } = useLanguage();
+
+  const navLinks = [
+    { label: t("nav.home"), href: "#home" },
+    { label: t("nav.about"), href: "#about" },
+    { label: t("nav.treatments"), href: "#treatments" },
+    { label: t("nav.prices"), href: "#prices" },
+    { label: t("nav.testimonials"), href: "#testimonials" },
+    { label: t("nav.contact"), href: "#contact" },
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
@@ -34,107 +37,105 @@ const Navigation = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-      scrolled ?
-      "bg-background/90 backdrop-blur-xl shadow-sm border-b border-border/30" :
-      "bg-transparent"}`
-      }>
-
-      <nav className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        scrolled
+          ? "bg-background/90 backdrop-blur-xl shadow-sm border-b border-border/30"
+          : "bg-transparent"
+      }`}
+    >
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
         {/* Logo */}
         <button onClick={() => scrollTo("#home")} className="flex items-center gap-2">
-          <Suspense fallback={<div className="w-12 h-12" />}>
+          <Suspense fallback={<div className="w-10 h-10 sm:w-12 sm:h-12" />}>
             <Logo3D size="lg" />
           </Suspense>
           <div className="flex flex-col">
-            <span className="font-heading text-2xl tracking-wide text-foreground font-extrabold md:text-4xl">
+            <span className="font-heading text-xl sm:text-2xl md:text-4xl tracking-wide text-foreground font-extrabold">
               Tatiana Torres
             </span>
-            <span className="tracking-[0.35em] uppercase font-body text-sm font-medium text-primary">
+            <span className="tracking-[0.2em] sm:tracking-[0.35em] uppercase font-body text-[10px] sm:text-sm font-medium text-primary">
               Brazilian Aesthetic & Beauty
             </span>
           </div>
         </button>
 
         {/* Desktop links */}
-        <ul className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) =>
-          <li key={link.href}>
+        <ul className="hidden lg:flex items-center gap-6 xl:gap-8">
+          {navLinks.map((link) => (
+            <li key={link.href}>
               <button
-              onClick={() => scrollTo(link.href)}
-              className="text-sm tracking-wider uppercase font-body text-foreground/70 hover:text-foreground transition-colors duration-300 font-medium">
-
+                onClick={() => scrollTo(link.href)}
+                className="text-sm tracking-wider uppercase font-body text-foreground/70 hover:text-foreground transition-colors duration-300 font-medium"
+              >
                 {link.label}
               </button>
             </li>
-          )}
+          ))}
           <li>
-            
-
-
-
-
-
+            <LanguageSwitcher />
           </li>
         </ul>
 
-        {/* Mobile toggle */}
-        <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden flex flex-col gap-1.5 p-2"
-          aria-label="Toggle menu">
-
-          <span
-            className={`w-6 h-px bg-foreground transition-all duration-300 ${
-            mobileOpen ? "rotate-45 translate-y-[3.5px]" : ""}`
-            } />
-
-          <span
-            className={`w-6 h-px bg-foreground transition-all duration-300 ${
-            mobileOpen ? "opacity-0" : ""}`
-            } />
-
-          <span
-            className={`w-6 h-px bg-foreground transition-all duration-300 ${
-            mobileOpen ? "-rotate-45 -translate-y-[3.5px]" : ""}`
-            } />
-
-        </button>
+        {/* Mobile: flags + toggle */}
+        <div className="flex lg:hidden items-center gap-3">
+          <LanguageSwitcher />
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="flex flex-col gap-1.5 p-2"
+            aria-label="Toggle menu"
+          >
+            <span
+              className={`w-6 h-px bg-foreground transition-all duration-300 ${
+                mobileOpen ? "rotate-45 translate-y-[3.5px]" : ""
+              }`}
+            />
+            <span
+              className={`w-6 h-px bg-foreground transition-all duration-300 ${
+                mobileOpen ? "opacity-0" : ""
+              }`}
+            />
+            <span
+              className={`w-6 h-px bg-foreground transition-all duration-300 ${
+                mobileOpen ? "-rotate-45 -translate-y-[3.5px]" : ""
+              }`}
+            />
+          </button>
+        </div>
       </nav>
 
       {/* Mobile menu */}
       <AnimatePresence>
-        {mobileOpen &&
-        <motion.div
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: "auto" }}
-          exit={{ opacity: 0, height: 0 }}
-          className="md:hidden bg-background/95 backdrop-blur-xl border-b border-border/30 overflow-hidden">
-
-            <ul className="flex flex-col items-center gap-6 py-8">
-              {navLinks.map((link) =>
-            <li key={link.href}>
+        {mobileOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            className="lg:hidden bg-background/95 backdrop-blur-xl border-b border-border/30 overflow-hidden"
+          >
+            <ul className="flex flex-col items-center gap-5 py-6">
+              {navLinks.map((link) => (
+                <li key={link.href}>
                   <button
-                onClick={() => scrollTo(link.href)}
-                className="text-sm tracking-wider uppercase font-body text-foreground/70 hover:text-foreground transition-colors">
-
+                    onClick={() => scrollTo(link.href)}
+                    className="text-sm tracking-wider uppercase font-body text-foreground/70 hover:text-foreground transition-colors"
+                  >
                     {link.label}
                   </button>
                 </li>
-            )}
+              ))}
               <li>
                 <button
-                onClick={() => scrollTo("#booking")}
-                className="btn-primary-luxury text-xs py-3 px-6">
-
-                  Book Now
+                  onClick={() => scrollTo("#booking")}
+                  className="btn-primary-luxury text-xs py-3 px-6"
+                >
+                  {t("nav.bookNow")}
                 </button>
               </li>
             </ul>
           </motion.div>
-        }
+        )}
       </AnimatePresence>
-    </motion.header>);
-
+    </motion.header>
+  );
 };
 
 export default Navigation;
